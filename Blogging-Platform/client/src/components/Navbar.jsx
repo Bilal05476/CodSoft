@@ -5,9 +5,10 @@ const Navbar = () => {
   return (
     <nav className="navbar bg-body-tertiary fixed-top">
       <div className="container-fluid">
-        <a className="navbar-brand" href="#">
-          Offcanvas navbar
-        </a>
+        <NavLink className="navbar-brand" to="/">
+          Logo
+        </NavLink>
+        <NavLink to="/">Dashboard</NavLink>
         <button
           className="navbar-toggler"
           type="button"
@@ -25,9 +26,9 @@ const Navbar = () => {
           aria-labelledby="offcanvasNavbarLabel"
         >
           <div className="offcanvas-header">
-            <h5 className="offcanvas-title" id="offcanvasNavbarLabel">
-              Offcanvas
-            </h5>
+            <NavLink className="navbar-brand" to="/">
+              Offcanvas navbar
+            </NavLink>
             <button
               type="button"
               className="btn-close"
@@ -38,15 +39,11 @@ const Navbar = () => {
           <div className="offcanvas-body">
             <ul className="navbar-nav justify-content-end flex-grow-1 pe-3">
               <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="#">
+                <NavLink className="nav-link" aria-current="page" to="/">
                   Home
-                </a>
+                </NavLink>
               </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#">
-                  Link
-                </a>
-              </li>
+
               <li className="nav-item dropdown">
                 <a
                   className="nav-link dropdown-toggle"
