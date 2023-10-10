@@ -1,21 +1,24 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Navbar from "./components/Navbar";
+import Cards from "./components/Cards";
+import Home from "./components/Home";
+import { Route, Routes } from "react-router-dom";
+import Blogs from "./components/Blogs";
+import BlogDetails from "./components/BlogDetails";
+import Category from "./components/Category";
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
-  }
-}
+const App = () => {
+  return (
+    <div className="container-fluid p-0">
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/blogs" element={<Blogs />} />
+        <Route path="/blogs/category/:category" element={<Category />} />
+        <Route path="/blog/:slug" element={<BlogDetails />} />
+      </Routes>
+    </div>
+  );
+};
 
 export default App;
